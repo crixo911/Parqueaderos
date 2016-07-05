@@ -1,0 +1,38 @@
+	<div ng-controller="controladorU" >
+		
+		<marquee> <center><h1>LISTA DE USUARIOS</h1></center> </marquee>
+		<label>Buscar: </label>
+		<input type="text" name="" ng-model="busqueda" placeholder="Ingrese el Texto" required><br>
+		<a href="" ng-click="activar()" ng-hide="visualizar">Ingresar Usuario</a>
+		<form ng-submit="agregarItem()" name="formulario" ng-show="visualizar">
+			<label>Nombre: </label>
+			<input type="text" name="nombre" ng-model="nombre" placeholder="Ingresar el nombre"><br>
+			<label>Telefono: </label>
+			<input type="text" name="telefono" ng-model="telefono" placeholder="Ingresar el telefono" required><br>
+			<label>Materia: </label>
+			<select ng-model="materia">
+				<option>Programacion Avanzada</option>
+				<option>Contabilidad</option>
+				<option>Arquitectura de Computadoras</option>
+				<option>Etica Profecional</option>
+				<option>Estadistica</option>
+			</select>
+			<input type="submit" value="Ingresar" ng-disabled="formulario.$invalid">
+		</form><br>
+		<h5>Lista de Alumnos</h5>
+		<table class="table table-striped">
+			<tr>
+				<td><a href="" ng-click="ordenar('nombre')"> Nombres</a></td>
+				<td><a href="" ng-click="ordenar('telefono')"> Telefono</a></td>
+				<td><a href="" ng-click="ordenar('materia')"> Materia</a></td>
+				<td>Opciones</td>
+			</tr>
+			<tr ng-repeat="al in listaAlumnos | orderBy:ordenado |filter:busqueda">
+				<td>{{al.nombre }}</td>
+				<td>{{al.telefono}}</td>
+				<td>{{al.materia }}</td>
+				<td></td>
+			</tr>
+		</table>
+		
+	</div>

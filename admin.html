@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Parqueaderos</title>
+ 	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="libreria/angular.min.js"></script>
+    <script src="libreria/angular-resource.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="controlador">
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Parqueo Admin</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#gestion">Opciones del Administrador</a></li> 
+                    <li><a href="#">Cerrar Sesion</a></li> 
+                </ul>
+            </div>
+        </nav>
+
+        <section class="no-padding" id="gestion">
+            <div class="container-fluid" >
+            <center><h1 class="header">Opciones del Admin</h1></center>
+            <div>
+                <a href="#/propietario/">Gestion Usuario</a>
+            </div>
+            <div>
+                <a href="#/usuario/">Gestion Propietario</a>
+            </div> 
+        </div>
+        </section>
+        
+
+    </div>
+
+	
+
+</body>
+</html>
